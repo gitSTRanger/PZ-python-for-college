@@ -4,18 +4,23 @@
 символом «.» (точка). В конце строки точку не ставить.
 '''
 
-string = " Слово    один слово два  "
+# инициализируем поле строки
+string = " Слово    один слово два "
 
-outputString: str = ""
 
 def changeLine(stringLine):
-
+    # инициализируем пустое поле будующей измененной строки
     corectString: str = ""
 
+    # проще на словах обьяснить
     for (index, char) in enumerate(stringLine):
+        #если индекс итерации = длине строки -1 (минус последний пробел-символ) то завершить цикл
+        if index == len(stringLine)-1:
+            break
         if char == " ":
             char = "."
-        outputString += char
+        corectString += char
+    return corectString
 
-
-print(outputString)
+# вывод измененной строки
+print(changeLine(string))
