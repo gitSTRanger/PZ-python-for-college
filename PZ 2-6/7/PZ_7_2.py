@@ -5,22 +5,7 @@
 '''
 
 # инициализируем поле строки
-string = " Слово    один слово два "
+string = '   Слово    один   слово два слово три'
 
-
-def changeLine(stringLine):
-    # инициализируем пустое поле будующей измененной строки
-    corectString: str = ""
-
-    # проще на словах обьяснить
-    for (index, char) in enumerate(stringLine):
-        #если индекс итерации = длине строки -1 (минус последний пробел-символ) то завершить цикл
-        if index == len(stringLine)-1:
-            break
-        if char == " ":
-            char = "."
-        corectString += char
-    return corectString
-
-# вывод измененной строки
-print(changeLine(string))
+str_1 = ".".join(string.split())
+print(str_1)
